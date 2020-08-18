@@ -30,7 +30,7 @@ namespace WinFormsClassesExtended
             {
                 if (doc.Naam == Ziekenhuisbeheer.huidigeDokter.Naam)
                 {
-                    Ziekenhuisbeheer.ziekenhuis.DokterLijst.Select(doc);
+                    doc.AfspraakToevoegen(a);
                 }
             }
             Close();

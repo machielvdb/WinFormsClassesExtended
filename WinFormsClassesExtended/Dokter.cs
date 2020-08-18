@@ -14,11 +14,11 @@ namespace WinFormsClassesExtended
         public Dokter(string naam)
         {
             Naam = naam;
+            AfsprakenLijst = new List<Afspraak>();
         }
 
         public Dokter(Afspraak a)
         {
-            AfsprakenLijst = new List<Afspraak>();
             AfsprakenLijst.Add(a);
         }
 
@@ -37,6 +37,11 @@ namespace WinFormsClassesExtended
         public Dokter()
         {
 
+        }
+
+        public void AfspraakToevoegen(Afspraak a)
+        {
+            AfsprakenLijst.Add(a);
         }
     }
 }

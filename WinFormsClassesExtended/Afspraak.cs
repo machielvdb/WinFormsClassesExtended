@@ -18,5 +18,10 @@ namespace WinFormsClassesExtended
             Uur = uur;
             Reden = reden;
         }
+
+        public override string ToString()
+        {
+            return Reden;
+        }
     }
 }

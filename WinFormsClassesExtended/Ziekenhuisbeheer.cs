@@ -27,6 +27,18 @@ namespace WinFormsClassesExtended
             f.Show();
         }
 
+        private void ToonAfspraken()
+        {
+            huidigeDokter = lbDokters.SelectedItem as Dokter;
+            foreach (var item in ziekenhuis.DokterLijst)
+            {
+                if (huidigeDokter == item)
+                {
+                    lbAfspraken.DataSource = item.AfsprakenLijst;
+                }
+            }
+        }
+
         private void Ziekenhuisbeheer_Load(object sender, EventArgs e)
         {
             foreach (var item in naamLijst)
@@ -42,15 +54,7 @@ namespace WinFormsClassesExtended
         private void lbDokters_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnNieuweAfspraak.Enabled = true;
-            huidigeDokter = lbDokters.SelectedItem as Dokter;
-
-            foreach (var item in ziekenhuis.DokterLijst)
-            {
-                if (huidigeDokter == item)
-                {
-                    lbAfspraken.DataSource = item.AfsprakenLijst;
-                }
-            }
+            ToonAfspraken();
         }
     }
 }
